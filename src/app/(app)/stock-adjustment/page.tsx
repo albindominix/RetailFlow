@@ -108,9 +108,9 @@ export default function StockAdjustmentPage() {
               <div className="grid gap-2">
                 <div className="flex justify-between items-center">
                     <Label htmlFor="reason">Reason</Label>
-                    <Button variant="ghost" size="sm" onClick={handleGetAiSuggestion} disabled={isAiLoading}>
+                    {/* <Button variant="ghost" size="sm" onClick={handleGetAiSuggestion} disabled={isAiLoading}>
                         {isAiLoading ? 'Getting suggestion...' : 'Get AI Suggestion'}
-                    </Button>
+                    </Button> */}
                 </div>
                 <Textarea id="reason" value={reason} onChange={e => setReason(e.target.value)} placeholder="e.g., Spoilage, Found in warehouse" />
               </div>
