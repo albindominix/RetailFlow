@@ -56,6 +56,15 @@ export default function ReportsPage() {
 
     return { totalSales, totalCost, totalProfit, totalTax };
   }, [state.sales, state.products, canViewCosts]);
+  
+  const getPaymentMethod = (sale: (typeof state.sales)[0]) => {
+      const hasCash = sale.payment.cash > 0;
+      const hasCard = sale.payment.card > 0;
+      if (hasCash && hasCard) return 'Split';
+      if (hasCash) return 'Cash';
+      if (hasCard) return 'Card';
+      return 'N/A';
+  }
 
   return (
     <ProtectedPage permission="reports.view_financials">
@@ -127,6 +136,7 @@ export default function ReportsPage() {
                   <TableHead>Date</TableHead>
                   <TableHead>Items</TableHead>
                   <TableHead>Status</TableHead>
+                  <TableHead>Payment Method</TableHead>
                   <TableHead className="text-right">Total</TableHead>
                 </TableRow>
               </TableHeader>
@@ -141,6 +151,7 @@ export default function ReportsPage() {
                         {sale.status}
                       </Badge>
                     </TableCell>
+                    <TableCell>{getPaymentMethod(sale)}</TableCell>
                     <TableCell className="text-right">${sale.total.toFixed(2)}</TableCell>
                   </TableRow>
                 ))}
