@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { PlusCircle, File, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,10 +19,12 @@ import { ProtectedPage } from "@/components/app/protected-page";
 import { useAppContext } from "@/hooks/use-app-context";
 import { useToast } from "@/hooks/use-toast";
 import type { PurchaseOrder, PurchaseOrderItem, GoodsReceiptNote } from "@/lib/definitions";
+import { useAccessControl } from "@/hooks/use-access-control";
 
 export default function ProcurementPage() {
   const { state, dispatch } = useAppContext();
   const { toast } = useToast();
+  const { canAccess } = useAccessControl();
   const [newPOItems, setNewPOItems] = useState<PurchaseOrderItem[]>([]);
   const [selectedSupplier, setSelectedSupplier] = useState<number | null>(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
@@ -114,7 +117,14 @@ export default function ProcurementPage() {
                         <DialogHeader><DialogTitle>Create Local Purchase Order</DialogTitle></DialogHeader>
                         <div className="grid gap-4 py-4">
                             <div className="grid gap-2">
-                                <Label htmlFor="supplier">Supplier</Label>
+                                <div className="flex justify-between items-center">
+                                    <Label htmlFor="supplier">Supplier</Label>
+                                    {canAccess("admin.manage_users") && (
+                                        <Button variant="link" asChild className="h-auto p-0">
+                                            <Link href="/admin?tab=suppliers"><PlusCircle className="mr-1 h-3 w-3" />Add new supplier</Link>
+                                        </Button>
+                                    )}
+                                </div>
                                 <Select onValueChange={(val) => setSelectedSupplier(Number(val))}>
                                     <SelectTrigger><SelectValue placeholder="Select a supplier" /></SelectTrigger>
                                     <SelectContent>
@@ -123,7 +133,14 @@ export default function ProcurementPage() {
                                 </Select>
                             </div>
                              <div className="grid gap-2">
-                                <Label>Add Products</Label>
+                                <div className="flex justify-between items-center">
+                                    <Label>Add Products</Label>
+                                    {canAccess("inventory.edit") && (
+                                        <Button variant="link" asChild className="h-auto p-0">
+                                            <Link href="/inventory"><PlusCircle className="mr-1 h-3 w-3" />Add new product</Link>
+                                        </Button>
+                                    )}
+                                </div>
                                 <Select onValueChange={addPOItem}>
                                     <SelectTrigger><SelectValue placeholder="Select a product to add" /></SelectTrigger>
                                     <SelectContent>
