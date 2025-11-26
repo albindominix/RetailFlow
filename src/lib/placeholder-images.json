@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "product-1",
+      "description": "A generic product image",
+      "imageUrl": "https://images.unsplash.com/photo-1738045646275-979fc0daea2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwcm9kdWN0JTIwaXRlbXxlbnwwfHx8fDE3NjQxMjI0MTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "product item"
+    },
+    {
+      "id": "product-2",
+      "description": "Another generic product image",
+      "imageUrl": "https://images.unsplash.com/photo-1664216294580-66c4a8a66bbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9kdWN0JTIwcGFja2FnZXxlbnwwfHx8fDE3NjQwNDQ3MjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "product package"
+    },
+    {
+      "id": "product-3",
+      "description": "A third generic product image",
+      "imageUrl": "https://images.unsplash.com/photo-1645684084216-b52ba9e12aaf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxlbGVjdHJvbmljcyUyMGdhZGdldHxlbnwwfHx8fDE3NjQwNzUwMjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "electronics gadget"
+    },
+    {
+      "id": "product-4",
+      "description": "A fourth generic product image",
+      "imageUrl": "https://images.unsplash.com/photo-1761393956376-98c280da9698?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjbG90aGluZyUyMGl0ZW18ZW58MHx8fHwxNzY0MTQ3MTI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "clothing item"
+    },
+    {
+      "id": "product-5",
+      "description": "A fifth generic product image",
+      "imageUrl": "https://images.unsplash.com/photo-1688043045884-13fcff22d8b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxmb29kJTIwaXRlbXxlbnwwfHx8fDE3NjQxNDcxMjV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "food item"
+    },
+    {
+      "id": "barcode",
+      "description": "A placeholder for a barcode",
+      "imageUrl": "https://images.unsplash.com/photo-1609863528474-be5232027f63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxiYXJjb2RlJTIwc2NhbnxlbnwwfHx8fDE3NjQxNDcxMjR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "barcode scan"
+    }
+  ]
 }
