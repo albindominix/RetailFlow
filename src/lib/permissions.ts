@@ -11,7 +11,8 @@ export type Permission =
   | 'reports.view_costs'
   | 'stock_adjustment.create'
   | 'admin.manage_users'
-  | 'admin.manage_suppliers';
+  | 'admin.manage_suppliers'
+  | 'sales.view';
 
 export const permissions: Record<Role, Permission[]> = {
   Cashier: [
@@ -28,6 +29,7 @@ export const permissions: Record<Role, Permission[]> = {
     'reports.view_financials',
     'reports.view_costs',
     'stock_adjustment.create',
+    'sales.view',
   ],
   Owner: [
     'pos.create',
@@ -41,5 +43,6 @@ export const permissions: Record<Role, Permission[]> = {
     'stock_adjustment.create',
     'admin.manage_users',
     'admin.manage_suppliers',
+    'sales.view',
   ],
 };

@@ -13,6 +13,7 @@ import {
   ArrowLeftRight,
   Settings,
   PackagePlus,
+  ReceiptText,
 } from "lucide-react";
 
 import {
@@ -34,6 +35,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: "/pos", icon: ShoppingCart, label: "POS", permission: "pos.create" },
+  { href: "/sales", icon: ReceiptText, label: "Sales", permission: "sales.view" },
   { href: "/refunds", icon: ArrowLeftRight, label: "Refunds", permission: "pos.refunds" },
   { href: "/inventory", icon: Package, label: "Inventory", permission: "inventory.view" },
   { href: "/procurement", icon: Truck, label: "Procurement", permission: "procurement.manage" },

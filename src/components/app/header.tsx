@@ -10,6 +10,7 @@ import {
   LogOut,
   Menu,
   Wallet,
+  ReceiptText,
 } from "lucide-react";
 import Link from 'next/link';
 
@@ -43,6 +44,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: "/pos", label: "POS", permission: "pos.create" },
+  { href: "/sales", label: "Sales", permission: "sales.view" },
   { href: "/refunds", label: "Refunds", permission: "pos.refunds" },
   { href: "/inventory", label: "Inventory", permission: "inventory.view" },
   { href: "/procurement", label: "Procurement", permission: "procurement.manage" },
